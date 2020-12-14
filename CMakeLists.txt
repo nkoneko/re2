@@ -85,6 +85,7 @@ set(RE2_SOURCES
 
 add_library(re2 ${RE2_SOURCES})
 add_library(re2::re2 ALIAS re2)
+target_include_directories(re2 INTERFACE $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/>)
 
 if(RE2_BUILD_TESTING)
   set(TESTING_SOURCES
